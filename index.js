@@ -1,4 +1,4 @@
-import {LitElement, html, css} from '../../node_modules/lit-element/lit-element.js'
+import {LitElement, html, css} from './node_modules/lit-element/lit-element.js'
 
 import "./components/lit-header.js";
 import "./components/lit-search.js";
@@ -122,7 +122,7 @@ export default class LitContain extends LitElement{
     //* Constructor
     constructor(){
         super();
-        this.modal = true;
+        this.modal = false;
         this.tipo = '';
         this.marca = '';
         this.detalles = '';
