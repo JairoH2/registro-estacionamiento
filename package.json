@@ -1,0 +1,19 @@
+{
+  "name": "servicio-estacionamiento",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "web-dev-server --node-resolve --open --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@web/dev-server": "^0.1.34"
+  },
+  "dependencies": {
+    "fa-icons": "^0.2.0",
+    "lit": "^2.3.1"
+  }
+}
