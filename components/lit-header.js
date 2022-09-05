@@ -1,4 +1,4 @@
-import { LitElement, html, css } from "lit";
+import {LitElement, html, css} from '../../node_modules/lit-element/lit-element.js'
 
 export default class LitHeader extends LitElement{
 
