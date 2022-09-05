@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import {LitElement, html, css} from '../../node_modules/lit-element/lit-element.js'
 import 'fa-icons';
 
 export default class LitSearch extends LitElement {
