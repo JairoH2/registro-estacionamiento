@@ -27,7 +27,9 @@ export default class LitSearch extends LitElement {
         .search__icon{
             position: absolute;
             top: 4px;
-            left: 5px;
+            left: 4px;
+            width: 25px;
+            height: 25px;
         }
 
         .search__icon.visible{
@@ -50,7 +52,7 @@ export default class LitSearch extends LitElement {
         return html`
             <div class="search-container">
                 <input type="text" placeholder="Buscar" class="search__input" @focus="${this.searchProduct}" @blur="${this.noSearchProduct}" />
-                <fa-icon class="fas fa-search search__icon" color="#1F1E25;" size="1.5em"></fa-icon>
+                <img src="../assets/search_icon.svg" class="search__icon"></img>
             </div>
         `;
     }
