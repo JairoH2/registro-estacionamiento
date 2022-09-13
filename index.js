@@ -3,7 +3,6 @@ import {LitElement, html, css} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core
 import "./components/lit-header.js";
 import "./components/lit-search.js";
 import "./components/lit-vehiculo.js";
-import "./components/lit-update-form.js"
 
 
 export default class LitContain extends LitElement{
