@@ -18,10 +18,11 @@ export default class LitSearch extends LitElement {
             line-height: normal;
             border: none;
             border-radius: 15px;
+            padding-left: 1rem;
         }
 
         .search__input::placeholder{
-            padding-left: 2rem;
+            padding-left: 1rem;
         }
 
         .search__icon{

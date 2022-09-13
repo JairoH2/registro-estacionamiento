@@ -21,15 +21,27 @@ export default class LitVehiculo extends LitElement {
             border-radius: 15px;
             border: none;
             padding: 0.5rem 1.2rem;
+            cursor: pointer;
+        }
+        .card p:nth-child(3){
+            margin-top: 0px;
+        }
+        .card p:nth-child(1){
+            margin-bottom: 0px;
         }
         .header{
+            margin-top: 0.5rem;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             justify-content: space-between;
         }
+        .header__icon{
+            width: 30px;
+        }
         .vehiculo-icon{
-            display: flex;
-            justify-content: center;
+            display: block;
+            margin: 0 auto;
+            width: 30%;
         }
         .option{
             font-weight: 700;
@@ -40,7 +52,9 @@ export default class LitVehiculo extends LitElement {
         type: { type: String},
         brand: { type: String},
         details: { type: String},
-        entryTime: { type: String}
+        entryTime: { type: String},
+        srcImage: {type: String},
+        elementId: {type: String}
     }
 
     constructor(){
@@ -49,18 +63,38 @@ export default class LitVehiculo extends LitElement {
         this.brand = 'undefined';
         this.details = 'undefined';
         this.entryTime = 'undefined';
+        this.srcImage = 'undefined';
+        this.elementId = 'undefined'
+    }
+
+    
+    get _input() {
+        return (this.___input ??= this.renderRoot?.querySelector('.card') ?? null);
+    }
+
+    _dispatchLogin() {
+        console.log("Ejecutando Dispach")
+        const name = this.elementId;
+        if (name) {
+            const options = {
+            detail: {name},
+            bubbles: true,
+            composed: true,
+            };
+            this.dispatchEvent(new CustomEvent('mylogin', options));
+        }
     }
 
     render() {
         return html`
-            <div class="card">
+            <div class="card" @click="${this._dispatchLogin}">
                 <div class="header">
                     <p>02 de Septiembre</p>
-                    <fa-icon class="fas fa-arrow-right" color="#ffffff;" size="1.5em"></fa-icon>
+                    <img src="../assets/arrow_icon.svg" class="header__icon"/>
                 </div>
 
-                <fa-icon class="fas fa-car vehiculo-icon" color="#0b161b;" size="5em"></fa-icon>
-                <p><span class="option">Tipo:</span> ${this.type}</p>
+                <img src="${this.srcImage}" class="vehiculo-icon"/>
+                <p><span class="option">Tipo:</span> ${this.type === 'bicicleta' ? 'Bicicleta' : this.type === 'motocicleta' ? 'Motocicleta' : 'Automóvil'}</p>
                 <p><span class="option">Marca:</span> ${this.brand}</p>
                 <P><span class="option">Detalles:</span> ${this.details}</P>
                 <p><span class="option">Entrada:</span> ${this.entryTime}</p>
